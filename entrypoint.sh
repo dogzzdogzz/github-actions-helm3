@@ -1,5 +1,6 @@
 #!/bin/sh
 
+set -e
 # helm upgrade --values values.yaml --set $set_overrides \
 #      $INPUT_NAME $INPUT_CHART_NAME
 echo "${KUBECONFIG_FILE}" > /root/kubeconfig.yaml
