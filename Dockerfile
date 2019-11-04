@@ -18,5 +18,4 @@ RUN curl -o aws-iam-authenticator ${AWS_IAM_AUTHENTICATOR_FILE} && \
     mv aws-iam-authenticator /usr/bin/aws-iam-authenticator 
 WORKDIR /root
 COPY . /root/
-# ENTRYPOINT ["/root/entrypoint.sh"]
-CMD ["sh"]
+ENTRYPOINT ["/root/entrypoint.sh"]
