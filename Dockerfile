@@ -11,8 +11,7 @@ RUN apk add --no-cache ca-certificates jq curl bash nodejs python3 && \
     rm -rf linux-amd64 && \
     pip3 install awscli
 RUN curl -o kubectl ${KUBECTL_FILE} && \
-    mv kubectl /usr/bin/kubectl && \
-    mkdir -p /root/.kube
+    mv kubectl /usr/bin/kubectl
 RUN curl -o aws-iam-authenticator ${KUBECTL_FILE} && \
     mv aws-iam-authenticator /usr/bin/aws-iam-authenticator 
 WORKDIR /root
