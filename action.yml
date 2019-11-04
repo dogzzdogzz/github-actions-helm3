@@ -27,3 +27,6 @@ inputs:
       support inputs other than strings. So, for now specify all the
       overrides in a separate line as shown in Readme, and this action
       will take care of the rest.
+runs:
+  using: docker
+  image: Dockerfile
