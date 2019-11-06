@@ -16,7 +16,7 @@ inputs:
   namespace:
     description: Namespace of the helm release.
     required: true
-  values_file:
+  values_files:
     description: |
       Yaml file containing overrides for default values
       provided by the chart.
