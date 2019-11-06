@@ -10,6 +10,5 @@ VALUES_TEMPLATE="${INPUT_CHART}/values.yaml"
 if [ "${INPUT_ENV_FILES}" != "" ]; then
     VALUES_TEMPLATE="${VALUES_TEMPLATE} ${INPUT_ENV_FILES}"
 fi
-ls -l ${GITHUB_WORKSPACE}
-ls -l ${GITHUB_WORKSPACE}/${INPUT_CHART}
+ls -l ${GITHUB_WORKSPACE}/${INPUT_CHART}/
 echo ${VALUES_TEMPLATE} | xargs printf -- "-f ${GITHUB_WORKSPACE}/%s\n" | xargs helm install ${INPUT_RELEASE} ${GITHUB_WORKSPACE}/${INPUT_CHART} --namespace ${INPUT_NAMESPACE}
