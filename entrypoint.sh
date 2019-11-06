@@ -13,4 +13,5 @@ fi
 
 echo ${VALUES_TEMPLATE} | xargs printf -- "-f ${GITHUB_WORKSPACE}/%s\n" | xargs echo helm template ${INPUT_RELEASE} ${GITHUB_WORKSPACE}/${INPUT_CHART} --namespace ${INPUT_NAMESPACE}
 echo ${VALUES_TEMPLATE} | xargs printf -- "-f ${GITHUB_WORKSPACE}/%s\n" | xargs helm template ${INPUT_RELEASE} ${GITHUB_WORKSPACE}/${INPUT_CHART} --namespace ${INPUT_NAMESPACE}
+echo ${VALUES_TEMPLATE} | xargs printf -- "-f ${GITHUB_WORKSPACE}/%s\n" | xargs echo helm upgrade ${INPUT_RELEASE} ${GITHUB_WORKSPACE}/${INPUT_CHART} -i --namespace ${INPUT_NAMESPACE}
 echo ${VALUES_TEMPLATE} | xargs printf -- "-f ${GITHUB_WORKSPACE}/%s\n" | xargs helm upgrade ${INPUT_RELEASE} ${GITHUB_WORKSPACE}/${INPUT_CHART} -i --namespace ${INPUT_NAMESPACE}
