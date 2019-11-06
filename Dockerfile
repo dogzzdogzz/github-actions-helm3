@@ -16,6 +16,7 @@ RUN curl -o kubectl ${KUBECTL_FILE} && \
 RUN curl -o aws-iam-authenticator ${AWS_IAM_AUTHENTICATOR_FILE} && \
     chmod +x aws-iam-authenticator && \
     mv aws-iam-authenticator /usr/bin/aws-iam-authenticator 
-WORKDIR /root
+RUN mkdir -p /github/workspace
+WORKDIR /github/workspace
 COPY . /root/
 ENTRYPOINT ["/root/entrypoint.sh"]
